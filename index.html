@@ -1,24 +1,42 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Heavens Studio</title>
-  <link rel="icon" type="image/png" href="src/img/PNG/Cor/16pxFavIcon.png">
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="responsive.css">
+  <link rel="icon" type="image/png" href="src/img/PNG/Cor/16pxFavIcon.png" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="responsive.css" />
 </head>
 <body>
 
+  <!-- Skip link (opcional, melhora acessibilidade) -->
+  <a href="#inicio" class="skip-link" style="position:absolute;left:-9999px;top:auto;">Pular para conteúdo</a>
+
   <!-- Navegação -->
   <header>
-    <nav class="navbar">
-      <div class="logo">
-        <img src="src/img/PNG/Cor/16pxFavIcon.png" alt="Logo Heavens" class="logo-img">
+    <nav class="navbar" role="navigation" aria-label="Menu principal">
+      <div class="logo" aria-hidden="false">
+        <img src="src/img/PNG/Cor/16pxFavIcon.png" alt="Logo Heavens" class="logo-img" />
         <span>Heavens Studio</span>
       </div>
 
-      <ul class="nav-links">
+      <!-- Botão Hamburguer (compatível com JS e acessibilidade) -->
+      <button
+        id="hamburger"
+        class="hamburger"
+        type="button"
+        aria-label="Abrir menu"
+        aria-controls="navLinks"
+        aria-expanded="false"
+        title="Abrir menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <!-- Menu (compatível com JS) -->
+      <ul class="nav-links" id="navLinks">
         <li><a href="#sobre">Sobre nós</a></li>
         <li><a href="#servicos">Serviços</a></li>
         <li><a href="#projetos">Projetos</a></li>
@@ -26,18 +44,20 @@
         <li><a href="#questionario">Questionário</a></li>
       </ul>
     </nav>
+
+    <!-- Overlay (compatível com JS) -->
+    <div class="overlay" id="overlay" aria-hidden="true"></div>
   </header>
 
   <!-- Seção Principal -->
-  <main class="main-section" id="inicio">
-    <div class="glow-circle"></div>
+  <main class="main-section" id="inicio" tabindex="-1">
+    <div class="glow-circle" aria-hidden="true"></div>
 
-
-    <div class="glass-box">
+    <div class="glass-box" role="region" aria-label="Introdução">
       <h1>Salmos:191</h1>
     </div>
 
-    <div class="loading-bar">
+    <div class="loading-bar" aria-hidden="true">
       <div class="dot"></div>
       <div class="dot"></div>
       <div class="dot"></div>
@@ -47,78 +67,77 @@
   </main>
 
   <!-- Seção Sobre Nós -->
-  <section id="sobre" class="section">
-    <h2>Sobre Nós</h2>
+  <section id="sobre" class="section" role="region" aria-labelledby="sobre-title">
+    <h2 id="sobre-title">Sobre Nós</h2>
     <p>
-      A Heavens Studio nasceu com o propósito de unir design, tecnologia e criatividade. 
-      Somos apaixonados por transformar ideias em experiências digitais únicas, 
-      com foco em qualidade, performance e identidade visual marcante.
+      A Heavens Studio nasceu com o propósito de unir design, tecnologia e criatividade.
+      Somos apaixonados por transformar ideias em experiências digitais únicas.
     </p>
   </section>
 
   <!-- Seção Serviços -->
-  <section id="servicos" class="section">
-    <h2>Serviços</h2>
+  <section id="servicos" class="section" role="region" aria-labelledby="servicos-title">
+    <h2 id="servicos-title">Serviços</h2>
     <div class="cards">
       <div class="card">
         <h3>Desenvolvimento Web</h3>
-        <p>Sites modernos, responsivos e otimizados para todos os dispositivos.</p>
+        <p>Sites modernos e responsivos.</p>
       </div>
       <div class="card">
         <h3>Design UI/UX</h3>
-        <p>Criação de interfaces intuitivas e agradáveis, com foco na experiência do usuário.</p>
+        <p>Interfaces intuitivas, bonitas e funcionais.</p>
       </div>
       <div class="card">
         <h3>Identidade Visual</h3>
-        <p>Design de logotipos, paletas de cores e marcas personalizadas para o seu negócio.</p>
+        <p>Logotipos, paletas e marcas únicas.</p>
       </div>
     </div>
   </section>
 
   <!-- Seção Projetos -->
-  <section id="projetos" class="section">
-    <h2>Projetos</h2>
-    <p>Explore alguns dos projetos desenvolvidos pelo estúdio:</p>
+  <section id="projetos" class="section" role="region" aria-labelledby="projetos-title">
+    <h2 id="projetos-title">Projetos</h2>
 
     <div class="projetos-grid">
-      <!-- EXEMPLO de projeto (você pode duplicar este bloco e trocar os dados) -->
       <div class="projeto-card">
-        <img src="https://via.placeholder.com/300x200" alt="Projeto 1">
+        <img src="https://via.placeholder.com/300x200" alt="Projeto 1" />
         <h3>Projeto Exemplo 1</h3>
-        <p>Descrição breve do projeto e tecnologias utilizadas.</p>
-        <a href="#" target="_blank" class="btn">Ver Projeto</a>
+        <p>Descrição do projeto.</p>
+        <a href="#" target="_blank" rel="noopener" class="btn">Ver Projeto</a>
       </div>
 
       <div class="projeto-card">
-        <img src="https://via.placeholder.com/300x200" alt="Projeto 2">
+        <img src="https://via.placeholder.com/300x200" alt="Projeto 2" />
         <h3>Projeto Exemplo 2</h3>
-        <p>Descrição breve do projeto e tecnologias utilizadas.</p>
-        <a href="#" target="_blank" class="btn">Ver Projeto</a>
+        <p>Descrição do projeto.</p>
+        <a href="#" target="_blank" rel="noopener" class="btn">Ver Projeto</a>
       </div>
     </div>
   </section>
 
-  <!-- Seção Contatos -->
-  <section id="contatos" class="section">
-    <h2>Contatos</h2>
-    <p>Entre em contato conosco através dos canais abaixo:</p>
+  <!-- Contatos -->
+  <section id="contatos" class="section" role="region" aria-labelledby="contatos-title">
+    <h2 id="contatos-title">Contatos</h2>
     <ul class="contatos-lista">
       <li>Email: <a href="mailto:contato@heavensstudio.com">contato@heavensstudio.com</a></li>
-      <li>Instagram: <a href="#">@heavensstudio</a></li>
+      <li>Instagram: <a href="#" rel="noopener">@heavensstudio</a></li>
       <li>Telefone: (11) 99999-9999</li>
     </ul>
   </section>
 
-  <!-- Seção Questionário -->
-  <section id="questionario" class="section">
-    <h2>Questionário</h2>
-    <form id="formulario">
-      <label>Nome:</label>
-      <input type="text" placeholder="Digite seu nome" required>
-      <label>Email:</label>
-      <input type="email" placeholder="Digite seu e-mail" required>
-      <label>Mensagem:</label>
-      <textarea placeholder="Escreva sua mensagem..." rows="5"></textarea>
+  <!-- Questionário -->
+  <section id="questionario" class="section" role="region" aria-labelledby="questionario-title">
+    <h2 id="questionario-title">Questionário</h2>
+    <form id="formulario" novalidate>
+      <label for="nome">Nome:</label>
+      <input id="nome" name="nome" type="text" placeholder="Digite seu nome" required />
+
+      <label for="email">Email:</label>
+      <input id="email" name="email" type="email" placeholder="Digite seu e-mail" required />
+
+      <label for="mensagem">Mensagem:</label>
+      <textarea id="mensagem" name="mensagem" placeholder="Escreva sua mensagem..." rows="5"></textarea>
+
       <button type="submit" class="btn">Enviar</button>
     </form>
   </section>

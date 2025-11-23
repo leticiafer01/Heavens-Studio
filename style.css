@@ -275,3 +275,107 @@ footer {
   text-align: center;
   padding: 1.5rem;
 }
+/* ===== Responsividade ===== */
+
+/* Telas até 1024px (tablets) */
+@media (max-width: 1024px) {
+
+  .navbar {
+    padding: 10px 20px;
+  }
+
+  .nav-links {
+    gap: 1rem;
+  }
+
+  .glass-box h1 {
+    font-size: 2rem;
+  }
+
+  .glow-circle {
+    width: 350px;
+    height: 350px;
+  }
+
+  .cards, .projetos-grid {
+    gap: 1.5rem;
+  }
+}
+
+/* Telas até 768px (celulares grandes) */
+@media (max-width: 768px) {
+
+  .navbar {
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 10px 0;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .glass-box {
+    padding: 1rem 2rem;
+    margin-top: 5rem;
+  }
+
+  .glass-box h1 {
+    font-size: 1.8rem;
+  }
+
+  .glow-circle {
+    width: 260px;
+    height: 260px;
+  }
+
+  .section {
+    padding: 4rem 5%;
+  }
+
+  .cards, .projetos-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card, .projeto-card {
+    width: 90%;
+    max-width: 350px;
+  }
+}
+
+/* Telas até 480px (smartphones pequenos) */
+@media (max-width: 480px) {
+
+  .logo-img {
+    width: 30px;
+  }
+
+  .logo {
+    font-size: 0.9rem;
+  }
+
+  .glass-box {
+    padding: 0.8rem 1.5rem;
+  }
+
+  .glass-box h1 {
+    font-size: 1.4rem;
+    text-align: center;
+  }
+
+  .glow-circle {
+    width: 200px;
+    height: 200px;
+  }
+
+  .section h2 {
+    font-size: 1.6rem;
+  }
+
+  .section p {
+    font-size: 1rem;
+  }
+}

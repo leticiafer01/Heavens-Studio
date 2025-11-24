@@ -398,11 +398,22 @@ footer {
   transform: translate(-50%, -50%);
   width: 200%;
   height: 90%;
-  object-fit: contain; /* ← Mostra a imagem INTEIRA */
+  object-fit: contain;
   object-position: center;
-  opacity: 0.75;
-  filter: blur(0px);
+  opacity: 1;
+
+  /* Transição suave para translúcido nas bordas */
+  mask-image: radial-gradient(circle, 
+    black 40%,       /* centro totalmente nítido */
+    transparent 100% /* bordas mais translúcidas */
+  );
+
+  -webkit-mask-image: radial-gradient(circle,
+    black 40%,
+    transparent 100%
+  );
 }
+
 
 
 /* Fundo principal */

@@ -140,7 +140,11 @@ header {
 
 /* ===== Seções ===== */
 .section {
-  background-image: url("src/img/PNG/Cor/1aPattern.png.png");
+  background: linear-gradient(
+  180deg,
+  #060a14 50%,
+  rgb(0, 0, 0) 100%
+  );
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;

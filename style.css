@@ -464,11 +464,12 @@ body::before {
 .contact-container {
   display: flex;
   justify-content: center;
-  gap: 60px;
+  gap: 0; /* <-- remove o espaçamento */
   flex-wrap: wrap;
-  align-items: center;
-  flex-direction: row-reverse; /* <-- INVERTE OS LADOS */
+  align-items: flex-start;
+  flex-direction: row-reverse;
 }
+
 
 
 
@@ -476,7 +477,9 @@ body::before {
 .contact-info {
   width: 330px;
   text-align: left;
+  margin-top: 80px; /* ↓ abaixa a coluna */
 }
+
 
 .contact-info h2 {
   font-size: 26px;
@@ -519,7 +522,7 @@ body::before {
 .contact-form {
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(6px);
-  padding: 40px;
+  padding: 30px 25px;
   border-radius: 20px;
   width: 420px;
   display: flex;

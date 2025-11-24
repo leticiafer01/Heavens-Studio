@@ -2,40 +2,44 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Heavens Studio</title>
+
+  <!-- FavIcon -->
   <link rel="icon" type="image/png" href="src/img/PNG/Cor/16pxFavIcon.png" />
+
+  <!-- CSS -->
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="responsive.css" />
 </head>
+
 <body>
 
-  <!-- Skip link (opcional, melhora acessibilidade) -->
-  <a href="#inicio" class="skip-link" style="position:absolute;left:-9999px;top:auto;">Pular para conteúdo</a>
+  <!-- Acessibilidade -->
+  <a href="#inicio" class="skip-link">Pular para conteúdo</a>
 
   <!-- Navegação -->
   <header>
-    <nav class="navbar" role="navigation" aria-label="Menu principal">
-      <div class="logo" aria-hidden="false">
+    <nav class="navbar" aria-label="Menu principal">
+      
+      <!-- Logo -->
+      <div class="logo">
         <img src="src/img/PNG/Cor/16pxFavIcon.png" alt="Logo Heavens" class="logo-img" />
         <span>Heavens Studio</span>
       </div>
 
-      <!-- Botão Hamburguer (compatível com JS e acessibilidade) -->
+      <!-- Botão Mobile -->
       <button
         id="hamburger"
         class="hamburger"
-        type="button"
         aria-label="Abrir menu"
         aria-controls="navLinks"
         aria-expanded="false"
-        title="Abrir menu">
-        <span></span>
-        <span></span>
-        <span></span>
+      >
+        <span></span><span></span><span></span>
       </button>
 
-      <!-- Menu (compatível com JS) -->
+      <!-- Links -->
       <ul class="nav-links" id="navLinks">
         <li><a href="#sobre">Sobre nós</a></li>
         <li><a href="#servicos">Serviços</a></li>
@@ -43,56 +47,60 @@
         <li><a href="#contatos">Contatos</a></li>
         <li><a href="#questionario">Questionário</a></li>
       </ul>
+
     </nav>
 
-    <!-- Overlay (compatível com JS) -->
     <div class="overlay" id="overlay" aria-hidden="true"></div>
   </header>
 
   <!-- Seção Principal -->
   <main class="main-section" id="inicio" tabindex="-1">
-    
+
+    <!-- Imagens de fundo -->
     <div class="img-container">
       <img src="src/img/PNG/Cor/fundo.png.png" class="img-base" alt="Fundo" />
       <img src="src/img/PNG/Cor/Azulcapa.png" class="img-top" alt="Imagem sobreposta" />
     </div>
-    
+
+    <!-- Glow -->
     <div class="glow-circle" aria-hidden="true"></div>
 
-    <!--<div class="glass-box" role="region" aria-label="Introdução">
-      <h1>Salmos:191</h1>
-    </div> -->
-
-    <!--<div class="loading-bar" aria-hidden="true">
-      <div class="dot"></div>
-      <div class="dot"></div>
-      <div class="dot"></div>
-      <div class="dot"></div>
-      <div class="dot"></div>
-    </div> -->
   </main>
 
-  <!-- Seção Sobre Nós -->
-  <section id="sobre" class="section" role="region" aria-labelledby="sobre-title">
-    <h2 id="sobre-title">Sobre Nós</h2>
-    <p>
-      A Heavens Studio nasceu com o propósito de unir design, tecnologia e criatividade.
-      Somos apaixonados por transformar ideias em experiências digitais únicas.
-    </p>
-  </section>
+  <!-- Sobre Nós -->
+  <section id="sobre" class="section" aria-labelledby="sobre-title">
+  <h2 id="sobre-title">Sobre Nós</h2>
 
-  <!-- Seção Serviços -->
-  <section id="servicos" class="section" role="region" aria-labelledby="servicos-title">
+  <p>
+    Somos um estúdio cristão dedicado a unir design, tecnologia e propósito para servir 
+    igrejas e organizações que desejam comunicar o Evangelho com excelência. Trabalhamos 
+    para desenvolver soluções que glorifiquem a Deus, expressem fidelidade bíblica e 
+    ajudem ministérios a alcançar mais pessoas com clareza e impacto.
+  </p>
+
+  <p>
+    Nossa missão é criar projetos que honrem o Senhor; nossa visão é ser referência no 
+    segmento cristão; e nossos valores — cristocentrismo, excelência, propósito, parceria 
+    e integridade — guiam cada decisão e cada detalhe do nosso trabalho.
+  </p>
+</section>
+
+
+  <!-- Serviços -->
+  <section id="servicos" class="section" aria-labelledby="servicos-title">
     <h2 id="servicos-title">Serviços</h2>
+
     <div class="cards">
       <div class="card">
         <h3>Desenvolvimento Web</h3>
         <p>Sites modernos e responsivos.</p>
       </div>
+
       <div class="card">
         <h3>Design UI/UX</h3>
         <p>Interfaces intuitivas, bonitas e funcionais.</p>
       </div>
+
       <div class="card">
         <h3>Identidade Visual</h3>
         <p>Logotipos, paletas e marcas únicas.</p>
@@ -100,58 +108,141 @@
     </div>
   </section>
 
-  <!-- Seção Projetos -->
-  <section id="projetos" class="section" role="region" aria-labelledby="projetos-title">
-    <h2 id="projetos-title">Projetos</h2>
+  <section id="projetos" class="section" aria-labelledby="projetos-title">
+  <h2 id="projetos-title">Projetos</h2>
 
-    <div class="projetos-grid">
-      <div class="projeto-card">
-        <img src="https://via.placeholder.com/300x200" alt="Projeto 1" />
-        <h3>Projeto Exemplo 1</h3>
-        <p>Descrição do projeto.</p>
-        <a href="#" target="_blank" rel="noopener" class="btn">Ver Projeto</a>
-      </div>
+  <div class="projetos-grid">
 
-      <div class="projeto-card">
-        <img src="https://via.placeholder.com/300x200" alt="Projeto 2" />
-        <h3>Projeto Exemplo 2</h3>
-        <p>Descrição do projeto.</p>
-        <a href="#" target="_blank" rel="noopener" class="btn">Ver Projeto</a>
+    <!-- CARD 1 -->
+    <div class="projeto-card flip-card">
+      <div class="flip-card-inner">
+
+        <!-- Frente -->
+        <div class="flip-card-front">
+          <img src="proj/Refris.gif" alt="Refri´s">
+          <h3>Refri´s</h3>
+        </div>
+
+        <!-- Verso -->
+        <div class="flip-card-back">
+          <h3> Refri´s</h3>
+          <p>Este projeto foi desenvolvido utilizando HTML, CSS e JavaScript.
+             O objetivo principal foi criar uma interface moderna e responsiva.</p>
+        </div>
+
       </div>
     </div>
-  </section>
 
-  <!-- Contatos -->
-  <section id="contatos" class="section" role="region" aria-labelledby="contatos-title">
-    <h2 id="contatos-title">Contatos</h2>
-    <ul class="contatos-lista">
-      <li>Email: <a href="mailto:contato@heavensstudio.com">contato@heavensstudio.com</a></li>
-      <li>Instagram: <a href="#" rel="noopener">@heavensstudio</a></li>
-      <li>Telefone: (11) 99999-9999</li>
-    </ul>
-  </section>
+    <!-- CARD 2 -->
+    <div class="projeto-card flip-card">
+      <div class="flip-card-inner">
 
-  <!-- Questionário -->
-  <section id="questionario" class="section" role="region" aria-labelledby="questionario-title">
-    <h2 id="questionario-title">Questionário</h2>
-    <form id="formulario" novalidate>
-      <label for="nome">Nome:</label>
-      <input id="nome" name="nome" type="text" placeholder="Digite seu nome" required />
+        <div class="flip-card-front">
+          <img src="src/img/projetos/projeto2.png" alt="Projeto 2">
+          <h3>Projeto 2</h3>
+        </div>
 
-      <label for="email">Email:</label>
-      <input id="email" name="email" type="email" placeholder="Digite seu e-mail" required />
+        <div class="flip-card-back">
+          <h3>Projeto 2</h3>
+          <p>Projeto focado em UI/UX com uma experiência limpa e intuitiva,
+            explorando gradientes e efeitos visuais modernos.</p>
+        </div>
 
-      <label for="mensagem">Mensagem:</label>
-      <textarea id="mensagem" name="mensagem" placeholder="Escreva sua mensagem..." rows="5"></textarea>
+      </div>
+    </div>
 
-      <button type="submit" class="btn">Enviar</button>
+    <!-- CARD 3 -->
+    <div class="projeto-card flip-card">
+      <div class="flip-card-inner">
+
+        <div class="flip-card-front">
+          <img src="src/img/projetos/projeto3.png" alt="Projeto 3">
+          <h3>Projeto 3</h3>
+        </div>
+
+        <div class="flip-card-back">
+          <h3>Projeto 3</h3>
+          <p>Aplicação completa desenvolvida em React, integrando API externa 
+             e design minimalista com glassmorphism.</p>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+ <section class="contact-section">
+
+  <h1 class="contact-title">Entre em <span>Contato</span></h1>
+  <p class="contact-subtitle">
+    Tem um projeto em mente ou gostaria de colaborar? <strong>Sinta-se</strong> livre para entrar em contato.  
+    Estamos sempre aberta a discutir novas oportunidades.
+  </p>
+
+  <div class="contact-container">
+
+    <!-- Informações de Contato -->
+    <div class="contact-info">
+
+      <h2>Informações de Contato</h2>
+
+      <div class="info-item">
+        <div class="icon-circle">
+          <img src="icons/envelope.png" alt="ícone de e-mail">
+        </div>
+        <div>
+          <p class="info-title">Email</p>
+          <p class="info-text">heavens.studio191@gmail.com</p>
+        </div>
+      </div>
+
+      <div class="info-item">
+        <div class="icon-circle">
+          <img src="icons/chamada-telefonica.png" alt="ícone de telefone">
+        </div>
+        <div>
+          <p class="info-title">Telefone</p>
+          <p class="info-text">+1 (123) 456-7890</p>
+        </div>
+      </div>
+
+      <div class="info-item">
+        <div class="icon-circle">
+          <img src="icons/marcador.png" alt="ícone de localização">
+        </div>
+        <div>
+          <p class="info-title">Localização</p>
+          <p class="info-text">Brasília - DF </p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Formulário -->
+    <form class="contact-form">
+
+      <h2>Enviar Mensagem</h2>
+
+      <input type="text" placeholder="Seu Nome" required>
+      <input type="email" placeholder="Seu Email" required>
+      <textarea rows="5" placeholder="Sua Mensagem" required></textarea>
+
+      <button type="submit">Enviar</button>
     </form>
-  </section>
 
+  </div>
+
+</section>
+
+  <!-- Footer -->
   <footer>
     <p>© 2025 Heavens Studio — Todos os direitos reservados</p>
   </footer>
 
+  <!-- Script -->
   <script src="script.js"></script>
+
 </body>
 </html>

@@ -76,3 +76,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 500 + i * 150);
   });
 });
+
+
+document.querySelectorAll(".flip-card").forEach(card => {
+  card.addEventListener("click", () => {
+    card.classList.toggle("clicked");
+  });
+});

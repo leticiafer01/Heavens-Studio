@@ -68,7 +68,7 @@ header {
 }
 
 .nav-links li a:hover {
-  color: #007bff;
+  color: #f9fd0600;
 }
 
 /* ===== Main Section ===== */
@@ -187,6 +187,97 @@ header {
 
 .card:hover {
   transform: translateY(-5px);
+}
+
+/* GRID DE PROJETOS */
+.projetos-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+/* CONTÊINER DO CARD */
+.flip-card {
+  width: 300px;
+  height: 350px;
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+/* ESTRUTURA INTERNA */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  border-radius: 20px;
+}
+
+/* AÇÃO: VIRAR AO CLICAR */
+.flip-card:active .flip-card-inner,
+.flip-card.clicked .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* FRENTE E VERSO */
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+
+  border-radius: 20px;
+  overflow: hidden;
+
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+
+  box-shadow: 0 0 30px rgba(0,0,0,0.4);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+
+  padding: 20px;
+}
+
+/* IMAGEM */
+.flip-card-front img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 14px;
+  margin-bottom: 10px;
+}
+
+/* TÍTULO */
+.flip-card-front h3,
+.flip-card-back h3 {
+  font-family: "Fira Sans", sans-serif;
+  margin-top: 10px;
+  font-size: 1.3rem;
+  color: #cfd4ff;
+}
+
+/* VERSO */
+.flip-card-back {
+  transform: rotateY(180deg);
+  justify-content: center;
+  text-align: center;
+}
+
+.flip-card-back p {
+  font-family: "Chillax", sans-serif;
+  padding: 10px 15px;
+  color: #e8eaff;
+  opacity: 0.9;
+  font-size: 0.95rem;
 }
 
 /* ===== Projetos ===== */
@@ -313,4 +404,155 @@ footer {
   filter: blur(0px);
 }
 
+
+/* Fundo principal */
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  background: radial-gradient(circle at top, #0e172a, #050814 70%);
+  color: #fff;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Estrelas no fundo */
+body::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("stars.png"); /* coloque sua imagem de estrelas */
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+/* Área geral */
+.contact-section {
+  padding: 120px 10%;
+  text-align: center;
+}
+
+/* Título */
+.contact-title {
+  font-size: 48px;
+  font-weight: 700;
+}
+
+.contact-title span {
+  background: linear-gradient(90deg, #a78bfa, #6d28d9);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.contact-subtitle {
+  max-width: 700px;
+  margin: 10px auto 60px;
+  font-size: 18px;
+  opacity: 0.85;
+}
+
+.contact-container {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  flex-wrap: wrap;
+  align-items: center;
+  flex-direction: row-reverse; /* <-- INVERTE OS LADOS */
+}
+
+
+
+/* Coluna de informações */
+.contact-info {
+  width: 330px;
+  text-align: left;
+}
+
+.contact-info h2 {
+  font-size: 26px;
+  margin-bottom: 30px;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin: 25px 0;
+}
+
+.icon-circle {
+  width: 45px;
+  height: 45px;
+  background: rgba(120, 110, 255, 0.12);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-circle img {
+  width: 22px;
+  opacity: 0.9;
+}
+
+.info-title {
+  font-weight: 600;
+  margin-bottom: -2px;
+}
+
+.info-text {
+  opacity: 0.8;
+  font-size: 15px;
+}
+
+/* Formulário */
+.contact-form {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(6px);
+  padding: 40px;
+  border-radius: 20px;
+  width: 420px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.contact-form h2 {
+  font-size: 26px;
+  margin-bottom: 10px;
+}
+
+/* Inputs */
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 16px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #fff;
+  font-size: 15px;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* Botão */
+.contact-form button {
+  padding: 15px;
+  font-size: 18px;
+  font-weight: 600;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  color: white;
+  background: linear-gradient(90deg, #6d28d9, #a78bfa);
+  transition: 0.25s;
+}
+
+.contact-form button:hover {
+  opacity: 0.8;
+}
 

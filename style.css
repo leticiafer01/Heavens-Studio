@@ -437,6 +437,7 @@ body::before {
 }
 
 /* Área geral */
+/* Área geral */
 .contact-section {
   padding: 120px 10%;
   text-align: center;
@@ -461,25 +462,22 @@ body::before {
   opacity: 0.85;
 }
 
+/* CONTAINER DOS DOIS BLOCO */
 .contact-container {
   display: flex;
-  justify-content: center;
-  gap: 0; /* <-- remove o espaçamento */
-  flex-wrap: wrap;
-  align-items: flex-start;
+  justify-content: center; /* centraliza */
+  align-items: center;     /* alinha vertical */
+  gap: 0;                  /* sem espaço */
+  flex-wrap: nowrap;       /* NÃO deixa quebrar */
   flex-direction: row-reverse;
 }
-
-
-
 
 /* Coluna de informações */
 .contact-info {
   width: 330px;
   text-align: left;
-  margin-top: 80px; /* ↓ abaixa a coluna */
+  margin-top: 0; /* <-- removemos o espaço que separava */
 }
-
 
 .contact-info h2 {
   font-size: 26px;
@@ -490,7 +488,7 @@ body::before {
   display: flex;
   align-items: center;
   gap: 15px;
-  margin: 25px 0;
+  margin: 20px 0;
 }
 
 .icon-circle {
@@ -510,7 +508,6 @@ body::before {
 
 .info-title {
   font-weight: 600;
-  margin-bottom: -2px;
 }
 
 .info-text {
@@ -536,7 +533,6 @@ body::before {
   margin-bottom: 10px;
 }
 
-/* Inputs */
 .contact-form input,
 .contact-form textarea {
   width: 100%;
@@ -548,12 +544,6 @@ body::before {
   font-size: 15px;
 }
 
-.contact-form input::placeholder,
-.contact-form textarea::placeholder {
-  color: rgba(255, 255, 255, 0.6);
-}
-
-/* Botão */
 .contact-form button {
   padding: 15px;
   font-size: 18px;
@@ -569,4 +559,3 @@ body::before {
 .contact-form button:hover {
   opacity: 0.8;
 }
-

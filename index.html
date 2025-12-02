@@ -15,14 +15,13 @@
 
 <body>
 
-  
   <!-- Navegação -->
   <header>
     <nav class="navbar" aria-label="Menu principal">
-      
+
       <!-- Logo -->
       <div class="logo">
-        <img src="src/img/PNG/Cor/16px_1FavIconB.png" alt="Logo Heavens" class="logo-img" />
+        <img src="src/img/PNG/Cor/16px_1FavIconB.png" alt="Logo Heavens Studio" class="logo-img" />
         <span>Heavens Studio</span>
       </div>
 
@@ -43,12 +42,9 @@
         <li><a href="#servicos">Serviços</a></li>
         <li><a href="#projetos">Projetos</a></li>
         <li><a href="#contatos">Contatos</a></li>
-        
       </ul>
 
     </nav>
-
-    <div class="overlay" id="overlay" aria-hidden="true"></div>
   </header>
 
   <!-- Seção Principal -->
@@ -56,187 +52,196 @@
 
     <!-- Imagens de fundo -->
     <div class="img-container">
-      <img src="src/img/PNG/Cor/fundo.png.png" class="img-base" alt="Fundo" />
-      <img src="src/img/PNG/Cor/OffVeraoPrincipal.png.png" class="img-top" alt="Imagem sobreposta" />
+      <img src="src/img/PNG/Cor/fundo.png.png" class="img-base" alt="Plano de fundo" />
+      <img src="src/img/PNG/Cor/OffVeraoPrincipal.png.png" class="img-top" alt="Imagem principal decorativa" />
     </div>
-
-    <!-- Glow -->
-    <!--<div class="glow-circle" aria-hidden="true"></div> -->
 
   </main>
 
   <!-- Sobre Nós -->
-  <section id="sobre" class="section" aria-labelledby="sobre-title">
-  <h2 id="sobre-title">Sobre Nós</h2>
+<section id="sobre" class="sobre-section" aria-labelledby="sobre-title">
 
-  <p>
-    Somos um estúdio cristão dedicado a unir design, tecnologia e propósito para servir 
-    igrejas e organizações que desejam comunicar o Evangelho com excelência. Trabalhamos 
-    para desenvolver soluções que glorifiquem a Deus, expressem fidelidade bíblica e 
-    ajudem ministérios a alcançar mais pessoas com clareza e impacto.
-  </p>
+  <!-- Partículas decorativas -->
+  <div class="sobre-particles"></div>
 
-  <p>
-    Nossa missão é criar projetos que honrem o Senhor; nossa visão é ser referência no 
-    segmento cristão; e nossos valores — cristocentrismo, excelência, propósito, parceria 
-    e integridade — guiam cada decisão e cada detalhe do nosso trabalho.
-  </p>
+  <div class="sobre-container">
+
+    <!-- Texto -->
+    <div class="sobre-left">
+      <h2 id="sobre-title">Sobre Nós</h2>
+
+      <div class="sobre-item">
+        <img src="icons/cruz.png" alt="ícone fé">
+        <p>
+          Somos um estúdio cristão dedicado a unir design, tecnologia e propósito para servir 
+          igrejas e organizações que desejam comunicar o Evangelho com excelência.
+        </p>
+      </div>
+
+      <div class="sobre-item">
+        <img src="icons/missao.png" alt="ícone missão">
+        <p>
+          Trabalhamos para desenvolver soluções que glorifiquem a Deus, expressem fidelidade bíblica 
+          e ajudem ministérios a alcançar mais pessoas com clareza e impacto.
+        </p>
+      </div>
+
+      <div class="sobre-item">
+        <img src="icons/alvo.png" alt="ícone objetivo">
+        <p>
+          Nossa missão é criar projetos que honrem o Senhor e nossos valores — cristocentrismo, excelência, 
+          propósito, parceria e integridade — guiam cada detalhe do nosso trabalho.
+        </p>
+      </div>
+    </div>
+
+    <!-- Divisão vertical -->
+    <div class="sobre-divider"></div>
+
+    <!-- Card lateral -->
+    <div class="sobre-right glass-sobre reveal">
+      <h3>Nosso Propósito</h3>
+      <p>Impactar vidas através da comunicação visual fundamentada na fé e excelência.</p>
+    </div>
+
+  </div>
+
 </section>
 
 
   <!-- Serviços -->
-  <section id="servicos" class="section" aria-labelledby="servicos-title">
-    <h2 id="servicos-title">Serviços</h2>
+<section id="servicos" class="servicos-section">
+  <h2 class="servicos-title">Serviços</h2>
 
-    <div class="cards">
-      <div class="card">
-        <h3>Desenvolvimento Web</h3>
-        <p>Sites modernos e responsivos.</p>
-      </div>
+  <div class="servicos-container">
 
-      <div class="card">
-        <h3>Design UI/UX</h3>
-        <p>Interfaces intuitivas, bonitas e funcionais.</p>
+    <div class="servico-card">
+      <div class="servico-icon">
+        <img src="icons/codigo.png" alt="Desenvolvimento Web">
       </div>
-
-      <div class="card">
-        <h3>Identidade Visual</h3>
-        <p>Logotipos, paletas e marcas únicas.</p>
-      </div>
+      <h3>Desenvolvimento Web</h3>
+      <p>Criação de sites modernos, rápidos e totalmente responsivos.</p>
     </div>
+
+    <div class="servico-card">
+      <div class="servico-icon">
+        <img src="icons/design.png" alt="Design UI/UX">
+      </div>
+      <h3>Design UI/UX</h3>
+      <p>Interfaces bonitas, funcionais e com foco total na experiência do usuário.</p>
+    </div>
+
+    <div class="servico-card">
+      <div class="servico-icon">
+        <img src="icons/identidade.png" alt="Identidade Visual">
+      </div>
+      <h3>Identidade Visual</h3>
+      <p>Criação de marcas completas, logotipos e diretrizes visuais fortes.</p>
+    </div>
+
+  </div>
+</section>
+
+
+  <!-- Projetos -->
+<section id="projetos" class="projetos-section">
+  <h2 class="projetos-title">Projetos</h2>
+
+  <!-- Carrossel -->
+  <div class="projetos-wrapper">
+    <button id="prevProj" class="proj-arrow">‹</button>
+
+    <div class="projetos-carousel" id="projetosCarousel">
+
+      <div class="projeto-card-img" style="background-image: url('proj/Refris.gif');">
+        <span>Refri's</span>
+      </div>
+
+      <div class="projeto-card-img" style="background-image: url('src/img/projetos/img2.jpg');">
+        <span>Projeto 2</span>
+      </div>
+
+      <div class="projeto-card-img" style="background-image: url('src/img/projetos/img3.jpg');">
+        <span>Projeto 3</span>
+      </div>
+
+    </div>
+
+    <button id="nextProj" class="proj-arrow">›</button>
+  </div>
+
+</section>
+
+
+
+  <!-- Contatos -->
+  <section id="contatos" class="contact-section">
+
+    <h1 class="contact-title">Entre em <span>Contato</span></h1>
+
+    <p class="contact-subtitle">
+      Tem um projeto em mente ou gostaria de colaborar? <strong>Sinta-se</strong> livre para entrar em contato.  
+      Estamos sempre abertos a discutir novas oportunidades.
+    </p>
+
+    <div class="contact-container">
+
+      <!-- Informações de Contato -->
+      <div class="contact-info">
+
+        <h2>Informações de Contato</h2>
+
+        <div class="info-item">
+          <div class="icon-circle">
+            <img src="icons/envelope.png" alt="Ícone de e-mail">
+          </div>
+          <div>
+            <p class="info-title">Email</p>
+            <p class="info-text">heavens.studio191@gmail.com</p>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <div class="icon-circle">
+            <img src="icons/chamada-telefonica.png" alt="Ícone de telefone">
+          </div>
+          <div>
+            <p class="info-title">Telefone</p>
+            <p class="info-text">+1 (123) 456-7890</p>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <div class="icon-circle">
+            <img src="icons/marcador.png" alt="Ícone de localização">
+          </div>
+          <div>
+            <p class="info-title">Localização</p>
+            <p class="info-text">Brasília - DF</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Formulário -->
+      <form class="contact-form">
+
+        <h2>Enviar Mensagem</h2>
+
+        <input type="text" placeholder="Seu Nome" required />
+        <input type="email" placeholder="Seu Email" required />
+        <textarea rows="5" placeholder="Sua Mensagem" required></textarea>
+
+        <button type="submit">Enviar</button>
+      </form>
+
+    </div>
+
   </section>
-
-  <section id="projetos" class="section" aria-labelledby="projetos-title">
-  <h2 id="projetos-title">Projetos</h2>
-
-  <div class="projetos-grid">
-
-    <!-- CARD 1 -->
-    <div class="projeto-card flip-card">
-      <div class="flip-card-inner">
-
-        <!-- Frente -->
-        <div class="flip-card-front">
-          <img src="proj/Refris.gif" alt="Refri´s">
-          <h3>Refri´s</h3>
-        </div>
-
-        <!-- Verso -->
-        <div class="flip-card-back">
-          <h3> Refri´s</h3>
-          <p>Este projeto foi desenvolvido utilizando HTML, CSS e JavaScript.
-             O objetivo principal foi criar uma interface moderna e responsiva.</p>
-        </div>
-
-      </div>
-    </div>
-
-    <!-- CARD 2 -->
-    <div class="projeto-card flip-card">
-      <div class="flip-card-inner">
-
-        <div class="flip-card-front">
-          <img src="src/img/projetos/projeto2.png" alt="Projeto 2">
-          <h3>Projeto 2</h3>
-        </div>
-
-        <div class="flip-card-back">
-          <h3>Projeto 2</h3>
-          <p>Projeto focado em UI/UX com uma experiência limpa e intuitiva,
-            explorando gradientes e efeitos visuais modernos.</p>
-        </div>
-
-      </div>
-    </div>
-
-    <!-- CARD 3 -->
-    <div class="projeto-card flip-card">
-      <div class="flip-card-inner">
-
-        <div class="flip-card-front">
-          <img src="src/img/projetos/projeto3.png" alt="Projeto 3">
-          <h3>Projeto 3</h3>
-        </div>
-
-        <div class="flip-card-back">
-          <h3>Projeto 3</h3>
-          <p>Aplicação completa desenvolvida em React, integrando API externa 
-             e design minimalista com glassmorphism.</p>
-        </div>
-
-      </div>
-    </div>
-
-  </div>
-</section>
-
-
- <section id="contatos" class="contact-section">
-
-  <h1 class="contact-title">Entre em <span>Contato</span></h1>
-  <p class="contact-subtitle">
-    Tem um projeto em mente ou gostaria de colaborar? <strong>Sinta-se</strong> livre para entrar em contato.  
-    Estamos sempre aberta a discutir novas oportunidades.
-  </p>
-
-  <div class="contact-container">
-
-    <!-- Informações de Contato -->
-    <div class="contact-info">
-
-      <h2>Informações de Contato</h2>
-
-      <div class="info-item">
-        <div class="icon-circle">
-          <img src="icons/envelope.png" alt="ícone de e-mail">
-        </div>
-        <div>
-          <p class="info-title">Email</p>
-          <p class="info-text">heavens.studio191@gmail.com</p>
-        </div>
-      </div>
-
-      <div class="info-item">
-        <div class="icon-circle">
-          <img src="icons/chamada-telefonica.png" alt="ícone de telefone">
-        </div>
-        <div>
-          <p class="info-title">Telefone</p>
-          <p class="info-text">+1 (123) 456-7890</p>
-        </div>
-      </div>
-
-      <div class="info-item">
-        <div class="icon-circle">
-          <img src="icons/marcador.png" alt="ícone de localização">
-        </div>
-        <div>
-          <p class="info-title">Localização</p>
-          <p class="info-text">Brasília - DF </p>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- Formulário -->
-    <form class="contact-form">
-
-      <h2>Enviar Mensagem</h2>
-
-      <input type="text" placeholder="Seu Nome" required>
-      <input type="email" placeholder="Seu Email" required>
-      <textarea rows="5" placeholder="Sua Mensagem" required></textarea>
-
-      <button type="submit">Enviar</button>
-    </form>
-
-  </div>
-
-</section>
 
   <!-- Footer -->
   <footer>
-    <p>© 2025 Heavens Studio — Todos os direitos reservados</p>
+    <p>© 2025 Heavens Studio — Todos os direitos reservados.</p>
   </footer>
 
   <!-- Script -->

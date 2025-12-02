@@ -119,22 +119,6 @@
     font-weight: 600;
   }
 
-  /* overlay / backdrop para fechar clicando fora */
-  .overlay {
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.45);
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.25s ease, visibility 0s linear 0.25s;
-    z-index: 1000;
-  }
-
-  .overlay.show {
-    opacity: 1;
-    visibility: visible;
-    transition-delay: 0s;
-  }
 
   /* MAIN adjustments for mobile */
   .main-section {

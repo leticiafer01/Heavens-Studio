@@ -53,6 +53,11 @@ header {
   padding: 2px 8px;
 }
 
+/* Esconde o botão hamburguer no computador */
+.hamburger {
+  display: none;
+}
+
 .logo {
   display: flex;
   align-items: center;

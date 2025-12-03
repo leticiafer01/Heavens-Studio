@@ -24,11 +24,8 @@ body {
   scroll-behavior: smooth;
   
   /* Fundo */
-  background-color: #00020B;
-  background-repeat: no-repeat;
+  background-color:  #030208;
   background-size: cover;
-  background-attachment: fixed;
-
   position: relative;
 }
 
@@ -48,7 +45,7 @@ body::before {
 ========================== */
 header {
   width: 100%;
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(2, 52, 75, 0);
   backdrop-filter: blur(10px);
   box-shadow: 0 1px 3px rgba(0,0,0,0.1);
   position: fixed;
@@ -73,7 +70,7 @@ header {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  color: #000;
+  color: #fdf8f8;
   font-weight: 600;
   font-size: 1rem;
 }
@@ -90,13 +87,13 @@ header {
 
 .nav-links li a {
   text-decoration: none;
-  color: #000;
+  color: #fafafa;
   font-weight: 500;
   transition: color 0.3s ease;
 }
 
 .nav-links li a:hover {
-  color: #f9fd0600;
+  color: #f1f1f1e7;
 }
 
 /* ==========================
@@ -487,7 +484,7 @@ footer {
   border-radius: 12px;
   cursor: pointer;
   color: white;
-  background: linear-gradient(90deg, #6d28d9, #a78bfa);
+  background: #a4ac3e;
   transition: 0.25s;
 }
 
@@ -637,22 +634,6 @@ footer {
   color: #fff;
 }
 
-/* Partículas leves */
-.sobre-particles {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background-image: radial-gradient(rgba(255,255,255,0.12) 2px, transparent 2.5px);
-  background-size: 120px 120px;
-  opacity: 0.25;
-  animation: particlesMove 12s linear infinite;
-}
-
-@keyframes particlesMove {
-  from { background-position: 0 0; }
-  to { background-position: 200px 200px; }
-}
-
 /* Container principal */
 .sobre-container {
   display: flex;
@@ -766,3 +747,10 @@ footer {
     text-align: center;
   }
 }
+
+
+h1, h2 {
+  color: #E89506 !important; /* Amarelo das imagens */
+  font-weight: 700;
+}
+

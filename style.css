@@ -100,7 +100,6 @@ header {
    HERO — IMAGENS SOBREPOSTAS
 ========================== */
 /* Seção principal ocupando toda a tela */
-/* Seção principal ocupando toda a tela */
 .main-section {
   position: relative;
   min-height: 100vh;   /* <-- substitui height:100vh */

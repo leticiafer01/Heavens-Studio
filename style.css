@@ -11,13 +11,18 @@
   font-family: 'Fira Sans', sans-serif;
 }
 
+body::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
 body {
   margin: 0;
   font-family: "Inter", sans-serif;
   color: #fff;
   overflow-x: hidden;
   scroll-behavior: smooth;
-
+  
   /* Fundo */
   background-color: #00020B;
   background-repeat: no-repeat;

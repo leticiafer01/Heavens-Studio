@@ -59,50 +59,68 @@
 
 
   <!-- Sobre Nós -->
-<section id="sobre" class="sobre-section" aria-labelledby="sobre-title">
-
-
+  <section id="sobre" class="sobre-section" aria-labelledby="sobre-title">
   <div class="sobre-container">
 
-    <!-- Texto -->
+    <!-- Coluna esquerda: Texto Sobre Nós -->
     <div class="sobre-left">
       <h2 id="sobre-title">Sobre Nós</h2>
 
-      <div class="sobre-item">
-        <img src="icons/cruz.png" alt="ícone fé">
-        <p>
-          Somos um estúdio cristão dedicado a unir design, tecnologia e propósito para servir 
-          igrejas e organizações que desejam comunicar o Evangelho com excelência.
-        </p>
-      </div>
-
-      <div class="sobre-item">
-        <img src="icons/missao.png" alt="ícone missão">
-        <p>
-          Trabalhamos para desenvolver soluções que glorifiquem a Deus, expressem fidelidade bíblica 
-          e ajudem ministérios a alcançar mais pessoas com clareza e impacto.
-        </p>
-      </div>
-
-      <div class="sobre-item">
-        <img src="icons/alvo.png" alt="ícone objetivo">
-        <p>
-          Nossa missão é criar projetos que honrem o Senhor e nossos valores — cristocentrismo, excelência, 
-          propósito, parceria e integridade — guiam cada detalhe do nosso trabalho.
-        </p>
-      </div>
+      <p class="sobre-descricao">
+        A Heavens Studio é um estúdio de design e
+        desenvolvimento dedicado a servir igrejas e
+        organizações cristãs que desejam proclamar
+        o Evangelho e expandir o Reino de Deus.
+        <br><br>
+        Unimos design, tecnologia e propósito para
+        criar soluções que não apenas funcionem,
+        mas também glorifiquem ao Senhor. Nosso
+        trabalho nasce da convicção de que tudo o
+        que fazemos deve refletir excelência,
+        reverência e fidelidade bíblica.
+      </p>
     </div>
+
 
     <!-- Divisão vertical -->
     <div class="sobre-divider"></div>
 
-    <!-- Card lateral -->
-    <div class="sobre-right glass-sobre reveal">
-      <h3>Nosso Propósito</h3>
-      <p>Impactar vidas através da comunicação visual fundamentada na fé e excelência.</p>
+
+    <!-- Coluna direita: Missão, Visão, Valores -->
+    <div class="sobre-right">
+
+      <div class="sobre-item">
+        <img src="icons/Missao.png" alt="ícone missão">
+        <p>
+          Criar soluções de design e tecnologia que glorifiquem a Deus
+          e ajudem igrejas e organizações cristãs a comunicar seu
+          chamado com clareza, beleza e impacto, alcançando mais pessoas com o Evangelho.
+        </p>
+      </div>
+
+      <div class="sobre-item">
+        <img src="icons/Visao.png" alt="ícone visão">
+        <p>
+          Ser reconhecidos como referência em design e desenvolvimento para o segmento cristão,
+          criando projetos que não apenas resolvam problemas, mas expressem os valores do Reino de Deus
+          e contribuam para o crescimento e edificação da Igreja.
+        </p>
+      </div>
+
+      <div class="sobre-item">
+        <img src="icons/Valores.png" alt="ícone valores">
+        <ul class="values">
+          <li>Cristocentrismo: Tudo aponta para Ele.</li>
+          <li>Excelência: Porque Deus merece o melhor.</li>
+          <li>Propósito: Transformar pela renovação das mentes.</li>
+          <li>Integridade: Coerência em cada detalhe.</li>
+        </ul>
+      </div>
     </div>
 
+
   </div>
+</section>
 
 </section>
 
@@ -131,7 +149,7 @@
 
     <div class="servico-card">
       <div class="servico-icon">
-        <img src="icons/Visao.png" alt="Identidade Visual">
+        <img src="icons/IV.png" alt="Identidade Visual">
       </div>
       <h3>Identidade Visual</h3>
       <p>Criação de marcas completas, logotipos e diretrizes visuais fortes.</p>
@@ -153,22 +171,40 @@
 <section id="projetos" class="projetos-section">
   <h2 class="projetos-title">Projetos</h2>
 
-  <!-- Carrossel -->
+  
   <div class="projetos-wrapper">
     <button id="prevProj" class="proj-arrow">‹</button>
 
     <div class="projetos-carousel" id="projetosCarousel">
 
+      <!-- Card 01 -->
       <div class="projeto-card-img" style="background-image: url('proj/Refris.gif');">
-        <span>Refri's</span>
+        <div class="front">
+          <span>Refri's</span>
+        </div>
+        <div class="back">
+          Sistema de catálogo animado para bebidas com foco em UI moderna.
+        </div>
       </div>
 
+      <!-- Card 02 -->
       <div class="projeto-card-img" style="background-image: url('src/img/projetos/img2.jpg');">
-        <span>Projeto 2</span>
+        <div class="front">
+          <span>Projeto 2</span>
+        </div>
+        <div class="back">
+          Descrição breve do Projeto 2.
+        </div>
       </div>
 
+      <!-- Card 03 -->
       <div class="projeto-card-img" style="background-image: url('src/img/projetos/img3.jpg');">
-        <span>Projeto 3</span>
+        <div class="front">
+          <span>Projeto 3</span>
+        </div>
+        <div class="back">
+          Descrição breve do Projeto 3.
+        </div>
       </div>
 
     </div>
@@ -239,6 +275,11 @@
 
       </div>
 
+      
+      <!-- Divisão vertical -->
+    <div class="contact-divider"></div>
+
+      
       <!-- Formulário -->
       <form class="contact-form">
 

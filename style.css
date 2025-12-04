@@ -186,110 +186,117 @@ header {
 
 .card:hover { transform: translateY(-5px); }
 
-/* ==========================
-   FLIP-CARDS (PROJETOS ANTIGOS)
-========================== */
-.flip-card {
-  width: 300px;
-  height: 350px;
-  perspective: 1000px;
-  cursor: pointer;
-}
-
-.flip-card-inner {
-  width: 100%;
-  height: 100%;
-  transition: 0.8s;
-  transform-style: preserve-3d;
-}
-
-.flip-card.clicked .flip-card-inner {
-  transform: rotateY(180deg);
-}
-
-.flip-card-front,
-.flip-card-back {
-  position: absolute;
-  inset: 0;
-  backface-visibility: hidden;
-  border-radius: 20px;
-  background: rgba(255,255,255,0.08);
-  border: 1px solid rgba(255,255,255,0.08);
-  backdrop-filter: blur(12px);
-  box-shadow: 0 0 30px rgba(0,0,0,0.4);
-  padding: 20px;
-}
-
-.flip-card-front img {
-  width: 100%;
-  height: 200px;
-  border-radius: 14px;
-  object-fit: cover;
-}
-
-.flip-card-back {
-  transform: rotateY(180deg);
-  display: flex;
-  justify-content: center;
-  text-align: center;
-}
-
-/* ==========================
-   PROJETOS — CARROSSEL MANUAL (SEM SETAS)
-========================== */
+/* Seção Projetos */
 .projetos-section {
-  width: 100%;
-  padding: 80px 0;
+  padding: 60px 0;
+  background: #030208;
   text-align: center;
-  position: relative;
 }
 
 .projetos-title {
-  font-size: 42px;
-  font-weight: 300;
+  font-size: 36px;
+  font-weight: 700;
+  color: #d19a53;
   margin-bottom: 40px;
 }
 
-/* Carrossel arrastável */
+/* Wrapper geral */
+.projetos-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+}
+
+/* Setas laterais */
+.proj-arrow {
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 40px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.proj-arrow:hover {
+  opacity: 0.6;
+}
+
+/* Carrossel */
 .projetos-carousel {
   display: flex;
-  gap: 26px;
-  overflow-x: auto;
-  padding: 10px 60px;
-  scroll-behavior: smooth;
-  scrollbar-width: none;
+  gap: 30px;
 }
 
-.projetos-carousel::-webkit-scrollbar {
-  display: none;
-}
-
-/* Cards */
+/* CARD - frente + verso (flip) */
 .projeto-card-img {
-  min-width: 260px;
-  height: 380px;
-  border-radius: 28px;
+  width: 250px;
+  height: 180px;
   background-size: cover;
   background-position: center;
-  box-shadow: 0 0 20px #0033ff38;
-  border: 1px solid #ffffff25;
-  transition: .4s;
+  border-radius: 15px;
+  cursor: pointer;
+
+  /* Glass effect */
+  background-color: rgba(16, 52, 66, 0.2);
+  border: 1px solid rgba(16, 52, 66, 0.3);
+  backdrop-filter: blur(8px);
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+
+  transition: transform 0.3s ease;
   position: relative;
+
+  /* transform para flip */
+  transform-style: preserve-3d;
 }
 
+/* Hover - aumenta suavemente */
 .projeto-card-img:hover {
-  transform: translateY(-10px) scale(1.05);
-  box-shadow: 0 0 45px #0055ffaa;
+  transform: scale(1.05);
 }
 
-/* Texto no card */
+/* Texto sobre a imagem */
 .projeto-card-img span {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.45);
+  text-align: center;
+  padding: 8px 0;
+  color: #fff;
+  font-size: 20px;
+  border-radius: 0 0 15px 15px;
+  backdrop-filter: blur(4px);
+}
+
+/* --- FLIP CARD --- */
+
+.projeto-card-img .back {
   position: absolute;
-  bottom: 25px;
-  left: 25px;
-  font-size: 22px;
-  text-shadow: 0px 3px 20px #000;
-  animation: floatText 4s ease-in-out infinite;
+  inset: 0;
+  border-radius: 15px;
+  background: rgba(255, 252, 249, 0.1);
+  color: #fffcf9;
+  font-size: 16px;
+  padding: 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  transform: rotateY(180deg);
+  backface-visibility: hidden;
+}
+
+.projeto-card-img .front {
+  backface-visibility: hidden;
+}
+
+/* Quando o card é clicado */
+.projeto-card-img.flip {
+  transform: rotateY(180deg);
 }
 
 @keyframes floatText {
@@ -306,6 +313,13 @@ header {
 
 .contatos-lista li {
   margin: 0.5rem 0;
+}
+
+.contact-divider {
+    width: 2px;
+    height: 420px; /* Igual ao SOBRE */
+    background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, #d19a53 50%, rgba(255,255,255,0) 100%);
+    margin: 0 190px; /* Mesmo espaçamento lateral do SOBRE */
 }
 
 /* ===== Formulário ===== */
@@ -373,7 +387,8 @@ footer {
 .contact-info {
   width: 330px;
   text-align: left;
-  margin-top: 0; /* <-- removemos o espaço que separava */
+  padding: 0;
+  margin-top: 0 10px; /* <-- removemos o espaço que separava */
 }
 
 .contact-info h2 {
@@ -389,17 +404,19 @@ footer {
 }
 
 .icon-circle {
-  width: 45px;
-  height: 45px;
-  background: rgba(120, 110, 255, 0.12);
-  border-radius: 12px;
+  background: none;
+  border-radius: 0;
+  width: auto;
+  height: auto;
+  padding: 0;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
 }
 
+
 .icon-circle img {
-  width: 22px;
+  width: 40px;
   opacity: 0.9;
 }
 
@@ -550,20 +567,22 @@ footer {
 
 /* ÍCONE */
 .servico-icon {
-  width: 70px;
-  height: 70px;
+  width: auto;
+  height: auto;
   margin: 0 auto 20px;
-  border-radius: 18px;
-  background: rgba(255,255,255,0.12);
+  background: none;
+  border-radius: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(255,255,255,0.2);
+  backdrop-filter: none;
+  border: none;
+  padding: 0;
 }
 
+
 .servico-icon img {
-  width: 38px;
+  width: 40px;
   opacity: 0.9;
 }
 
@@ -583,134 +602,122 @@ footer {
 /* HOVER PREMIUM */
 .servico-card:hover {
   transform: translateY(-12px) scale(1.03);
-  background: rgba(255,255,255,0.15);
+  background:  #030208;
   box-shadow: 0 18px 45px rgba(0,0,0,0.45);
 }
 
 
-/* ================================
-   SOBRE NÓS — DESIGN AVANÇADO
-================================ */
+/* ====== ESTILOS DA SESSÃO SOBRE NÓS ====== */
 
 .sobre-section {
-  position: relative;
-  padding: 90px 20px;
-  overflow: hidden;
-  color: #fff;
+  width: 100%;
+  padding: 80px 0;
+  background:  #030208; /* fundo escuro elegante */
+  color: #ffffff;
+  font-family: "Chillax Medium", sans-serif;
+font-size: 20px;
 }
 
-/* Container principal */
+
 .sobre-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 50px;
-  position: relative;
-  z-index: 2;
-  flex-wrap: wrap;
+width: 85%;
+margin: auto;
+display: flex;
+justify-content: center;
+align-items: flex-start;
+gap: 60px;
 }
 
-/* Texto Esquerdo */
+
+/* ====== COLUNA ESQUERDA (texto longo) ====== */
 .sobre-left {
-  max-width: 550px;
+width: 45%;
 }
+
 
 .sobre-left h2 {
-  font-size: 2.7rem;
-  margin-bottom: 25px;
-  font-weight: 700;
-  background: linear-gradient(45deg, #fff, #d3e8ff);
-  -webkit-background-clip: text;
-  color: transparent;
+font-size: 2.4rem;
+margin-bottom: 25px;
+font-weight: 700;
+color: #d19a53; /* dourado da imagem */
 }
+
+
+.sobre-descricao {
+font-size: 1.1rem;
+line-height: 1.8;
+color: #dcdcdc;
+}
+
+
+/* ====== DIVISÃO VERTICAL ====== */
+.sobre-divider {
+width: 2px;
+height: 420px;
+background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, #d19a53 50%, rgba(255,255,255,0) 100%);
+}
+
+
+/* ====== COLUNA DIREITA (missão/visão/valores) ====== */
+.sobre-right {
+width: 45%;
+display: flex;
+flex-direction: column;
+gap: 35px;
+}
+
 
 .sobre-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 15px;
-  margin-bottom: 18px;
-
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeUp .7s ease forwards;
+display: flex;
+align-items: flex-start;
+gap: 18px;
 }
 
-.sobre-item:nth-child(2) { animation-delay: 0.1s; }
-.sobre-item:nth-child(3) { animation-delay: 0.2s; }
-.sobre-item:nth-child(4) { animation-delay: 0.3s; }
 
 .sobre-item img {
-  width: 32px;
-  opacity: 0.9;
+width: 40px;
+height: 40px;
+filter: brightness(1) saturate(1);
+margin-top: 40px; 
 }
 
-.sobre-item p {
-  font-size: 1.05rem;
-  line-height: 1.7rem;
+
+.sobre-item p,
+.sobre-item ul {
+font-size: 1.05rem;
+line-height: 1.7;
+color: #e6e6e6;
 }
 
-/* Divisor vertical */
-.sobre-divider {
-  width: 2px;
-  height: 300px;
-  background: linear-gradient(rgba(255,255,255,0.1), rgba(255,255,255,0.4), rgba(255,255,255,0.1));
-  border-radius: 10px;
 
-  opacity: 0;
-  animation: fadeUp .7s ease forwards;
-  animation-delay: 0.4s;
+.values {
+  list-style: disc;   /* ativa a bolinha padrão */
+  padding-left: 20px; /* afasta do ícone */
 }
 
-/* Card à direita */
-.sobre-right {
-  width: 320px;
-  padding: 35px 28px;
-  border-radius: 20px;
-  text-align: center;
 
-  background: rgba(255,255,255,0.08);
-  border: 1px solid rgba(255,255,255,0.15);
-  backdrop-filter: blur(14px);
-  box-shadow: 0 15px 40px rgba(0,0,0,0.35);
-
-  opacity: 0;
-  transform: translateY(20px);
-}
-
-/* Hover Premium */
-.sobre-right:hover {
-  background: rgba(255,255,255,0.14);
-  transform: translateY(-8px);
-  box-shadow: 0 25px 60px rgba(0,0,0,0.55);
-}
-
-.sobre-right h3 {
-  font-size: 1.4rem;
-  font-weight: 600;
-  margin-bottom: 10px;
-}
-
-/* Fade-up animado */
-@keyframes fadeUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* RESPONSIVO */
+/* ====== RESPONSIVIDADE ====== */
 @media (max-width: 900px) {
-  .sobre-container {
-    flex-direction: column;
-    gap: 30px;
-  }
-  .sobre-divider {
-    display: none;
-  }
-  .sobre-left h2,
-  .sobre-item p {
-    text-align: center;
-  }
+.sobre-container {
+flex-direction: column;
+text-align: center;
+}
+
+
+.sobre-left,
+.sobre-right {
+width: 100%;
+}
+
+
+.sobre-divider {
+display: none;
+}
+
+
+.sobre-item {
+justify-content: center;
+}
 }
 
 

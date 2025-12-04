@@ -168,3 +168,12 @@ function revealOnScroll() {
 
 window.addEventListener("scroll", revealOnScroll);
 revealOnScroll();
+
+<script>
+document.querySelectorAll('.projeto-card-img').forEach(card => {
+  card.addEventListener('click', () => {
+    card.classList.toggle('flip');
+  });
+});
+</script>
+

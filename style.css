@@ -228,82 +228,127 @@ header {
   gap: 30px;
 }
 
-/* CARD - frente + verso (flip) */
-.projeto-card-img {
-  width: 250px;
-  height: 180px;
-  background-size: cover;
-  background-position: center;
-  border-radius: 15px;
-  cursor: pointer;
-
-  /* Glass effect */
-  background-color: rgba(16, 52, 66, 0.2);
-  border: 1px solid rgba(16, 52, 66, 0.3);
-  backdrop-filter: blur(8px);
-
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-
-  transition: transform 0.3s ease;
-  position: relative;
-
-  /* transform para flip */
-  transform-style: preserve-3d;
-}
-
-/* Hover - aumenta suavemente */
-.projeto-card-img:hover {
-  transform: scale(1.05);
-}
-
-/* Texto sobre a imagem */
-.projeto-card-img span {
-  width: 100%;
-  background: rgba(0, 0, 0, 0.45);
+/* ==========================
+   PROJETOS - FLIP CARDS
+========================== */
+.projetos-section {
+  padding: 60px 0;
+  background: #030208;
   text-align: center;
-  padding: 8px 0;
-  color: #fff;
-  font-size: 20px;
-  border-radius: 0 0 15px 15px;
-  backdrop-filter: blur(4px);
 }
 
-/* --- FLIP CARD --- */
+.projetos-title {
+  font-size: 36px;
+  font-weight: 700;
+  color: #d19a53;
+  margin-bottom: 40px;
+}
 
-.projeto-card-img .back {
-  position: absolute;
-  inset: 0;
-  border-radius: 15px;
-  background: rgba(255, 252, 249, 0.1);
-  color: #fffcf9;
-  font-size: 16px;
-  padding: 20px;
-
+.projetos-wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 30px; /* mantém um bom espaçamento */
+  margin-top: 30px;
+}
+
+.proj-arrow {
+  font-size: 40px;
+  background: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.proj-arrow:hover { opacity: 0.6; }
+
+.projetos-carousel {
+  display: flex;
+  gap: 25px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  width: 85%; /* aumenta um pouco a largura do carrossel */
+  padding: 10px 0;
+}
+
+/* --- Flip Card --- */
+.flip-card {
+  perspective: 1200px;
+  min-width: 250px;
+  height: 180px;
+}
+
+.flip-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  border-radius: 18px;
+}
+
+.flip-card.clicked .flip-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-front,
+.flip-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 18px;
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  padding: 15px;
+  color: #fff;
+}
+
+.flip-front {
+  background-size: cover;
+  background-position: center;
+  background-color: rgba(16, 52, 66, 0.2);
+  border: 1px solid rgba(16, 52, 66, 0.3);
+  backdrop-filter: blur(8px);
+}
+
+.flip-front span {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: none;
+  padding: 0;
+  border-radius: 10px;
+  font-size: 20px;
+  font-weight: 600;
   text-align: center;
+}
 
+.flip-back {
+  /* Gradiente suave inspirado na paleta da frente */
+  background: linear-gradient(135deg, rgba(209,154,83,0.4), rgba(16,52,66,0.6));
+  
+  /* Efeito glass */
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+
+  /* Outras configurações do card */
+  color: #fffcf9;
   transform: rotateY(180deg);
-  backface-visibility: hidden;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  border-radius: 18px;
 }
 
-.projeto-card-img .front {
-  backface-visibility: hidden;
-}
-
-/* Quando o card é clicado */
-.projeto-card-img.flip {
-  transform: rotateY(180deg);
-}
-
-@keyframes floatText {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-4px); }
-  100% { transform: translateY(0); }
-}
 
 /* ===== Contatos ===== */
 .contatos-lista {
@@ -494,7 +539,7 @@ footer {
 .projeto-card-img {
   min-width: 320px;
   height: 220px;
-  border-radius: 16px;
+  border-radius: 18px;
   background-size: cover;
   background-position: center;
   position: relative;

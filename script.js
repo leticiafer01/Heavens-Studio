@@ -8,7 +8,6 @@ const overlay = document.getElementById("overlay");
 
 if (hamburger && navLinks && overlay) {
 
-  // Abrir / Fechar menu
   const toggleMenu = () => {
     hamburger.classList.toggle("open");
     navLinks.classList.toggle("nav-active");
@@ -18,19 +17,19 @@ if (hamburger && navLinks && overlay) {
       navLinks.classList.contains("nav-active") ? "hidden" : "auto";
   };
 
-  hamburger.addEventListener("click", toggleMenu);
-
-  // Fechar ao clicar em um link
-  document.querySelectorAll(".nav-links a").forEach(link => {
-    link.addEventListener("click", closeMenu);
-  });
-
-  function closeMenu() {
+  const closeMenu = () => {
     hamburger.classList.remove("open");
     navLinks.classList.remove("nav-active");
     overlay.classList.remove("show");
     document.body.style.overflow = "auto";
-  }
+  };
+
+  hamburger.addEventListener("click", toggleMenu);
+
+  // Fechar quando clicar em um link
+  document.querySelectorAll(".nav-links a").forEach(link => {
+    link.addEventListener("click", closeMenu);
+  });
 
   // Fechar com ESC
   document.addEventListener("keydown", e => {
@@ -61,6 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   dots.forEach((dot, i) => {
     dot.style.opacity = "0";
+
     setTimeout(() => {
       dot.style.transition = "0.5s ease";
       dot.style.opacity = "1";
@@ -71,7 +71,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 // ============================================
-// 3. CARDS COM FLIP (CLIQUE)
+// 3. FLIP CARD (GERAL) - via clique
 // ============================================
 
 document.querySelectorAll(".flip-card").forEach(card => {
@@ -83,7 +83,7 @@ document.querySelectorAll(".flip-card").forEach(card => {
 
 
 // ============================================
-// 4. CARROSSEL DE PROJETOS (VERSÃO FINAL)
+// 4. CARROSSEL GERAL
 // ============================================
 
 const carousel = document.getElementById("carousel");
@@ -93,29 +93,27 @@ const prevBtn = document.getElementById("prevBtn");
 if (carousel && nextBtn && prevBtn) {
 
   let index = 0;
-  const cardWidth = 340; // largura + gap
+  const cardWidth = 340;
+
+  const moveCarousel = (direction) => {
+    const totalCards = carousel.children.length;
+
+    index = Math.min(Math.max(index + direction, 0), totalCards - 1);
+    updateCarousel();
+  };
+
+  const updateCarousel = () => {
+    carousel.style.transform = `translateX(${-index * cardWidth}px)`;
+  };
 
   nextBtn.addEventListener("click", () => moveCarousel(1));
   prevBtn.addEventListener("click", () => moveCarousel(-1));
-
-  function moveCarousel(direction) {
-    const totalCards = carousel.children.length;
-
-    index += direction;
-
-    // Limita entre 0 e último card
-    index = Math.max(0, Math.min(index, totalCards - 1));
-
-    updateCarousel();
-  }
-
-  function updateCarousel() {
-    carousel.style.transform = `translateX(${-index * cardWidth}px)`;
-  }
 }
 
+
+
 // ============================================
-// CARROSSEL SUAVE COM SETAS E DESTAQUE
+// 5. CARROSSEL DE PROJETOS COM DESTAQUE
 // ============================================
 
 const carouselProj = document.getElementById("projetosCarousel");
@@ -125,41 +123,50 @@ const prevProjBtn = document.getElementById("prevProj");
 
 let projIndex = 0;
 
-function updateHighlight() {
-  projItems.forEach((item, i) => item.classList.remove("active"));
+const updateHighlight = () => {
+  projItems.forEach(item => item.classList.remove("active"));
   projItems[projIndex].classList.add("active");
-}
+};
 
-// Inicializa destaque
 updateHighlight();
 
-nextProjBtn.addEventListener("click", () => {
-  projIndex = Math.min(projIndex + 1, projItems.length - 1);
-  carouselProj.scrollTo({
-    left: projItems[projIndex].offsetLeft - 40,
-    behavior: "smooth"
+if (carouselProj && nextProjBtn && prevProjBtn) {
+
+  nextProjBtn.addEventListener("click", () => {
+    projIndex = Math.min(projIndex + 1, projItems.length - 1);
+
+    carouselProj.scrollTo({
+      left: projItems[projIndex].offsetLeft - 40,
+      behavior: "smooth"
+    });
+
+    updateHighlight();
   });
-  updateHighlight();
-});
 
-prevProjBtn.addEventListener("click", () => {
-  projIndex = Math.max(projIndex - 1, 0);
-  carouselProj.scrollTo({
-    left: projItems[projIndex].offsetLeft - 40,
-    behavior: "smooth"
+  prevProjBtn.addEventListener("click", () => {
+    projIndex = Math.max(projIndex - 1, 0);
+
+    carouselProj.scrollTo({
+      left: projItems[projIndex].offsetLeft - 40,
+      behavior: "smooth"
+    });
+
+    updateHighlight();
   });
-  updateHighlight();
-});
+}
 
 
-// ================================
-// REVEAL AO ROLAR A PÁGINA
-// ================================
+
+// ============================================
+// 6. ANIMAÇÃO REVEAL POR SCROLL
+// ============================================
+
 const revealElements = document.querySelectorAll(".reveal");
 
 function revealOnScroll() {
   revealElements.forEach(el => {
     const rect = el.getBoundingClientRect();
+
     if (rect.top < window.innerHeight - 100) {
       el.style.animation = "fadeUp .7s ease forwards";
     }
@@ -169,11 +176,14 @@ function revealOnScroll() {
 window.addEventListener("scroll", revealOnScroll);
 revealOnScroll();
 
-<script>
-document.querySelectorAll('.projeto-card-img').forEach(card => {
-  card.addEventListener('click', () => {
-    card.classList.toggle('flip');
+
+
+// ============================================
+// 7. FLIP ESPECÍFICO PARA CARDS DE PROJETO
+// ============================================
+
+document.querySelectorAll(".projeto-card-img").forEach(card => {
+  card.addEventListener("click", () => {
+    card.classList.toggle("flip");
   });
 });
-</script>
-

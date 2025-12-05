@@ -1,9 +1,15 @@
 /* ==========================
-   RESPONSIVIDADE UNIFICADA OTIMIZADA
+   RESPONSIVIDADE UNIFICADA + HERO
 ========================== */
 
 /* ===== Tablets (<= 1024px) ===== */
 @media (max-width: 1024px) {
+
+  /* HERO — img-top responsiva */
+  .img-top {
+    width: min(85vw, 500px);
+    max-height: 60vh;
+  }
 
   /* NAVBAR */
   .navbar {
@@ -51,8 +57,34 @@
   }
 }
 
+/* ===== Celulares grandes (<= 900px) ===== */
+@media (max-width: 900px) {
+
+  /* SOBRE */
+  .sobre-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  .sobre-left,
+  .sobre-right {
+    width: 100%;
+  }
+  .sobre-divider {
+    display: none;
+  }
+  .sobre-item {
+    justify-content: center;
+  }
+}
+
 /* ===== Celulares grandes (<= 768px) ===== */
 @media (max-width: 768px) {
+
+  /* HERO — img-top responsiva */
+  .img-top {
+    width: min(90vw, 400px);
+    max-height: 55vh;
+  }
 
   /* NAVBAR */
   header {
@@ -193,6 +225,12 @@
 /* ===== Celulares pequenos (<= 480px) ===== */
 @media (max-width: 480px) {
 
+  /* HERO — img-top responsiva */
+  .img-top {
+    width: 95vw;
+    max-height: 50vh;
+  }
+
   /* NAVBAR */
   .logo-img {
     width: 30px;
@@ -207,7 +245,6 @@
   .hamburger span {
     height: 3px;
   }
-
   .nav-links {
     width: 100%;
     max-width: none;

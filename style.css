@@ -149,7 +149,7 @@ header {
   position: absolute;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: cover; /* garante que cubra toda a área sem distorção */
   top: 0;
   left: 0;
   opacity: 1;
@@ -157,16 +157,15 @@ header {
 
 .img-top {
   position: absolute;
-  top: 55px;
+  top: 55px; /* mantém posição fixa */
   left: 50%;
   transform: translateX(-50%);
-  width: min(75vw, 600px);
-  height: auto;
+  width: min(75vw, 600px); /* redimensiona proporcionalmente */
+  height: auto; /* mantém proporção */
   max-height: 70vh;
   object-fit: contain;
   z-index: 2;
 }
-
 /* ==========================
    SEÇÕES GERAIS
 ========================== */
@@ -505,7 +504,7 @@ header {
   border-radius: 12px;
   cursor: pointer;
   color: white;
-  background: #a4ac3e;
+  background: #000000;
   transition: 0.25s;
 }
 
@@ -685,29 +684,6 @@ header {
 .values {
   list-style: disc;
   padding-left: 20px;
-}
-
-/* ==========================
-   RESPONSIVIDADE
-========================== */
-@media (max-width: 900px) {
-  .sobre-container {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .sobre-left,
-  .sobre-right {
-    width: 100%;
-  }
-
-  .sobre-divider {
-    display: none;
-  }
-
-  .sobre-item {
-    justify-content: center;
-  }
 }
 
 h1, h2 {
